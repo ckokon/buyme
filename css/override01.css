@@ -23,7 +23,7 @@ HTML, CSS and Bootstrap syntax were referred from these website:
 /*	importing TTF font for the logo "BUYME" */
 @font-face {
 	font-family: Bungee;
-	src: url(fonts/Bungee-Regular.ttf);
+	src: url(../fonts/Bungee-Regular.ttf);
 }
 
 /* styling for html background color */
