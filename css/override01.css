@@ -1,0 +1,135 @@
+/*
+
+Student Name: Chew Kok On
+Student ID: 2564243G
+
+This is a school assignment, to create a fictitious, responsive online store
+for electronic goods using Bootstrap 5. The fictitious company name is BUYME.
+
+Ideas, inspiration and images were derived from the following web sites:
+	https://www.courts.com.sg
+	https://simlimsquare.com.sg
+	https://www.amazon.sg
+
+HTML, CSS and Bootstrap syntax were referred from these website:
+	https://www.w3schools.com/html/default.asp
+	https://www.w3schools.com/css/default.asp
+	https://getbootstrap.com/docs/5.3/getting-started/introduction
+
+*/
+
+@charset "utf-8";
+
+/*	importing TTF font for the logo "BUYME" */
+@font-face {
+	font-family: Bungee;
+	src: url(fonts/Bungee-Regular.ttf);
+}
+
+/* styling for html background color */
+html {
+	background-color: rgba(64, 193, 209, 1);
+}
+
+/* styling for body background color */
+body {
+	background-color: ivory;
+	width: 80%;
+	height: auto;
+	margin: 0% auto 0% auto;
+	padding-left: 0.9%;
+	padding-right: 0.9%;
+}
+
+/* styling to override the default color for the class bg-primary */
+.bg-primary {
+	background-color: rgba(0, 91, 170, 1) !important;
+}
+
+/* styling to override the default color for the class bg-info */
+.bg-info {
+	background-color: rgba(64, 193, 209, 1) !important;
+}
+
+/* styling to override the default color for the class bg-secondary */
+.bg-secondary {
+	background-color: rgba(220, 220, 220, 1) !important;
+}
+
+/* styling to override the default color for the class bg-light */
+.bg-light {
+	background-color: rgba(237, 237, 237, 1) !important;
+}
+
+/* styling to override the default color for the class text-warning */
+.text-warning {
+	color: rgba(255, 207, 0, 1) !important;
+}
+
+/* styling to override the default color for the class btn-primary */
+.btn-primary {
+	background-color: rgba(0, 91, 170, 1) !important;
+	color: white !important;
+}
+
+/* styling to override the default color for the class btn-info */
+.btn-info {
+	background-color: rgba(64, 193, 209, 1) !important;
+	color: white !important;
+}
+
+/* styling to override the default color when hoverign over btn-primary and btn-info */
+.btn-primary:hover,
+.btn-danger:hover,
+.btn-info:hover {
+	background-color: black !important;
+	color: white !important;
+}
+
+/* styling to override the default color when clicking on btn-primary and btn-info */
+.btn-primary:active,
+.btn-danger:active,
+.btn-info:active {
+	color: rgba(255, 207, 0, 1) !important;
+}
+
+/* styling to change the hamburger icon color */
+.navbar-light .navbar-toggler-icon {
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-light .navbar-toggler {
+	border: 1px solid white
+}
+
+/* styling for the class nav-link when hovering over the blue navigator menu bar */
+.nav-link:hover {
+	color: rgba(255, 207, 0, 1) !important;
+}
+
+/* styling for the class hilite while hovering */
+.hilite:hover {
+	border: 1px solid rgba(0, 91, 170, 1) !important;
+}
+
+/* styling to override the default color for the class border-info */
+.border-info {
+	border: 1px solid rgba(64, 193, 209, 1) !important;
+}
+
+/*	styling for the text "BUYME" in the "span" element */
+span {
+	font-family: Bungee;
+}
+
+/* styling the font size for the class fs-7 */
+.fs-7 {
+	font-size: 14px;
+}
+
+/* styling the feedback form text area */
+.feedback {
+	resize: none;
+	width: 100%;
+	height: 210px;
+}
