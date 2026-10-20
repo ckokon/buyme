@@ -236,9 +236,11 @@
         </address>
     </footer>
 
-    <!-- DataLayer Event Script to Capture All Form Fields -->
+    <!-- DataLayer Event Script with 500ms Delay & Prevent Default -->
     <script>
         document.querySelector('form.card').addEventListener('submit', function (event) {
+            event.preventDefault(); // Stop instant page reload
+
             var formData = new FormData(event.target);
             var payload = {
                 'event': 'subscribed'
@@ -250,6 +252,11 @@
 
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push(payload);
+
+            // Wait 500ms to ensure tracking data sends before page navigates
+            setTimeout(function () {
+                event.target.submit();
+            }, 500);
         });
     </script>
 </body>
