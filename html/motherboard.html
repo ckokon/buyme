@@ -22,6 +22,40 @@
     <!-- End Google Tag Manager -->
 
     <script src="../bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- GA4 E-commerce Transaction Handler -->
+    <script>
+        function generateTransactionId() {
+            if (typeof crypto !== 'undefined' && crypto.randomUUID) {
+                return 'TXN-' + crypto.randomUUID();
+            }
+            return 'TXN-' + Date.now() + '-' + Math.random().toString(36).substr(2, 6);
+        }
+
+        function handleBuyIt(productName, productPrice) {
+            var txnId = generateTransactionId();
+
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                event: 'purchase',
+                ecommerce: {
+                    transaction_id: txnId,
+                    value: productPrice,
+                    currency: 'SGD',
+                    items: [{
+                        item_id: 'SKU-' + productName.replace(/\s+/g, '').toLowerCase(),
+                        item_name: productName,
+                        price: productPrice,
+                        quantity: 1
+                    }]
+                }
+            });
+
+            setTimeout(function () {
+                window.location.href = './thankyou.html';
+            }, 500);
+        }
+    </script>
 </head>
 
 <body>
@@ -179,6 +213,7 @@
             </p>
         </div>
         <div class="row">
+            <!-- Product 1 -->
             <div class="col-6 col-sm-4 col-md-3 col-lg-2 gx-0 border hilite">
                 <a class="text-decoration-none" href="AsusQ87T_overview.html">
                     <img class="w-100" src="../images/AsusQ87T.png" alt="Motherboard 1">
@@ -188,20 +223,11 @@
                 <div class="d-flex justify-content-center px-0 py-2">
                     <button class="btn btn-sm btn-primary me-1 border-0" type="button"
                         onclick="alert('Item added to cart')">+ Cart</button>
-                    <button class="btn btn-sm btn-danger ms-1 border-0" type="button" onclick="
-                            window.dataLayer = window.dataLayer || [];
-                            window.dataLayer.push({
-                                event: 'buyit',
-                                product: 'ASUS Q87T/CSM',
-                                price: 289.00
-                            });
-                            setTimeout(function() {
-                                window.location.href = './thankyou.html';
-                            }, 500);
-                        ">Buy It
-                    </button>
+                    <button class="btn btn-sm btn-danger ms-1 border-0" type="button"
+                        onclick="handleBuyIt('ASUS Q87T/CSM', 289.00)">Buy It</button>
                 </div>
             </div>
+            <!-- Product 2 -->
             <div class="col-6 col-sm-4 col-md-3 col-lg-2 gx-0 border hilite">
                 <a class="text-decoration-none" href="underconstruction.html">
                     <img class="w-100" src="../images/AsusROG_STRIX_B560-F_GAMING_WIFI.jpeg" alt="Motherboard 2">
@@ -211,20 +237,11 @@
                 <div class="d-flex justify-content-center px-0 py-2">
                     <button class="btn btn-sm btn-primary me-1 border-0" type="button"
                         onclick="alert('Item added to cart')">+ Cart</button>
-                    <button class="btn btn-sm btn-danger ms-1 border-0" type="button" onclick="
-                            window.dataLayer = window.dataLayer || [];
-                            window.dataLayer.push({
-                                event: 'buyit',
-                                product: 'ASUS ROG STRIX B560-F GAMING WIFI',
-                                price: 399.00
-                            });
-                            setTimeout(function() {
-                                window.location.href = './thankyou.html';
-                            }, 500);
-                        ">Buy It
-                    </button>
+                    <button class="btn btn-sm btn-danger ms-1 border-0" type="button"
+                        onclick="handleBuyIt('ASUS ROG STRIX B560-F GAMING WIFI', 399.00)">Buy It</button>
                 </div>
             </div>
+            <!-- Product 3 -->
             <div class="col-6 col-sm-4 col-md-3 col-lg-2 gx-0 border hilite">
                 <a class="text-decoration-none" href="underconstruction.html">
                     <img class="w-100" src="../images/ASUS_ROG_CROSSHAIR_VIII_FORMULA.jpeg" alt="Motherboard 3">
@@ -234,20 +251,11 @@
                 <div class="d-flex justify-content-center px-0 py-2">
                     <button class="btn btn-sm btn-primary me-1 border-0" type="button"
                         onclick="alert('Item added to cart')">+ Cart</button>
-                    <button class="btn btn-sm btn-danger ms-1 border-0" type="button" onclick="
-                            window.dataLayer = window.dataLayer || [];
-                            window.dataLayer.push({
-                                event: 'buyit',
-                                product: 'ASUS ROG CROSSHAIR VIII FORMULA',
-                                price: 1059.00
-                            });
-                            setTimeout(function() {
-                                window.location.href = './thankyou.html';
-                            }, 500);
-                        ">Buy It
-                    </button>
+                    <button class="btn btn-sm btn-danger ms-1 border-0" type="button"
+                        onclick="handleBuyIt('ASUS ROG CROSSHAIR VIII FORMULA', 1059.00)">Buy It</button>
                 </div>
             </div>
+            <!-- Product 4 -->
             <div class="col-6 col-sm-4 col-md-3 col-lg-2 gx-0 border hilite">
                 <a class="text-decoration-none" href="underconstruction.html">
                     <img class="w-100" src="../images/ASUS_TUF_GAMING_X570-PRO_WI-FI.jpeg" alt="Motherboard 4">
@@ -257,20 +265,11 @@
                 <div class="d-flex justify-content-center px-0 py-2">
                     <button class="btn btn-sm btn-primary me-1 border-0" type="button"
                         onclick="alert('Item added to cart')">+ Cart</button>
-                    <button class="btn btn-sm btn-danger ms-1 border-0" type="button" onclick="
-                            window.dataLayer = window.dataLayer || [];
-                            window.dataLayer.push({
-                                event: 'buyit',
-                                product: 'ASUS TUF GAMING X570-PRO (WI-FI)',
-                                price: 469.00
-                            });
-                            setTimeout(function() {
-                                window.location.href = './thankyou.html';
-                            }, 500);
-                        ">Buy It
-                    </button>
+                    <button class="btn btn-sm btn-danger ms-1 border-0" type="button"
+                        onclick="handleBuyIt('ASUS TUF GAMING X570-PRO (WI-FI)', 469.00)">Buy It</button>
                 </div>
             </div>
+            <!-- Product 5 -->
             <div class="col-6 col-sm-4 col-md-3 col-lg-2 gx-0 border hilite">
                 <a class="text-decoration-none" href="underconstruction.html">
                     <img class="w-100" src="../images/Asus_PRIME_H510M-A_WIFI.jpeg" alt="Motherboard 5">
@@ -280,20 +279,11 @@
                 <div class="d-flex justify-content-center px-0 py-2">
                     <button class="btn btn-sm btn-primary me-1 border-0" type="button"
                         onclick="alert('Item added to cart')">+ Cart</button>
-                    <button class="btn btn-sm btn-danger ms-1 border-0" type="button" onclick="
-                            window.dataLayer = window.dataLayer || [];
-                            window.dataLayer.push({
-                                event: 'buyit',
-                                product: 'ASUS PRIME H510M-A WIFI',
-                                price: 209.00
-                            });
-                            setTimeout(function() {
-                                window.location.href = './thankyou.html';
-                            }, 500);
-                        ">Buy It
-                    </button>
+                    <button class="btn btn-sm btn-danger ms-1 border-0" type="button"
+                        onclick="handleBuyIt('ASUS PRIME H510M-A WIFI', 209.00)">Buy It</button>
                 </div>
             </div>
+            <!-- Product 6 -->
             <div class="col-6 col-sm-4 col-md-3 col-lg-2 gx-0 border hilite">
                 <a class="text-decoration-none" href="underconstruction.html">
                     <img class="w-100" src="../images/ASUS_PRIME_B660M-PLUS_D4.jpeg" alt="Motherboard 6">
@@ -303,20 +293,11 @@
                 <div class="d-flex justify-content-center px-0 py-2">
                     <button class="btn btn-sm btn-primary me-1 border-0" type="button"
                         onclick="alert('Item added to cart')">+ Cart</button>
-                    <button class="btn btn-sm btn-danger ms-1 border-0" type="button" onclick="
-                            window.dataLayer = window.dataLayer || [];
-                            window.dataLayer.push({
-                                event: 'buyit',
-                                product: 'ASUS PRIME B660M-PLUS D4',
-                                price: 249.00
-                            });
-                            setTimeout(function() {
-                                window.location.href = './thankyou.html';
-                            }, 500);
-                        ">Buy It
-                    </button>
+                    <button class="btn btn-sm btn-danger ms-1 border-0" type="button"
+                        onclick="handleBuyIt('ASUS PRIME B660M-PLUS D4', 249.00)">Buy It</button>
                 </div>
             </div>
+            <!-- Product 7 -->
             <div class="col-6 col-sm-4 col-md-3 col-lg-2 gx-0 border hilite">
                 <a class="text-decoration-none" href="AsusQ87T_overview.html">
                     <img class="w-100" src="../images/Gigabyte_B550_AORUS_ELITE_AX_V2.jpg" alt="Motherboard 7">
@@ -326,20 +307,11 @@
                 <div class="d-flex justify-content-center px-0 py-2">
                     <button class="btn btn-sm btn-primary me-1 border-0" type="button"
                         onclick="alert('Item added to cart')">+ Cart</button>
-                    <button class="btn btn-sm btn-danger ms-1 border-0" type="button" onclick="
-                            window.dataLayer = window.dataLayer || [];
-                            window.dataLayer.push({
-                                event: 'buyit',
-                                product: 'GIGABYTE B550 AORUS ELITE AX V2',
-                                price: 207.58
-                            });
-                            setTimeout(function() {
-                                window.location.href = './thankyou.html';
-                            }, 500);
-                        ">Buy It
-                    </button>
+                    <button class="btn btn-sm btn-danger ms-1 border-0" type="button"
+                        onclick="handleBuyIt('GIGABYTE B550 AORUS ELITE AX V2', 207.58)">Buy It</button>
                 </div>
             </div>
+            <!-- Product 8 -->
             <div class="col-6 col-sm-4 col-md-3 col-lg-2 gx-0 border hilite">
                 <a class="text-decoration-none" href="underconstruction.html">
                     <img class="w-100" src="../images/GIGABYTE_B760_GAMING_X_DDR4.jpg" alt="Motherboard 8">
@@ -349,20 +321,11 @@
                 <div class="d-flex justify-content-center px-0 py-2">
                     <button class="btn btn-sm btn-primary me-1 border-0" type="button"
                         onclick="alert('Item added to cart')">+ Cart</button>
-                    <button class="btn btn-sm btn-danger ms-1 border-0" type="button" onclick="
-                            window.dataLayer = window.dataLayer || [];
-                            window.dataLayer.push({
-                                event: 'buyit',
-                                product: 'GIGABYTE B760 GAMING X DDR4',
-                                price: 308.99
-                            });
-                            setTimeout(function() {
-                                window.location.href = './thankyou.html';
-                            }, 500);
-                        ">Buy It
-                    </button>
+                    <button class="btn btn-sm btn-danger ms-1 border-0" type="button"
+                        onclick="handleBuyIt('GIGABYTE B760 GAMING X DDR4', 308.99)">Buy It</button>
                 </div>
             </div>
+            <!-- Product 9 -->
             <div class="col-6 col-sm-4 col-md-3 col-lg-2 gx-0 border hilite">
                 <a class="text-decoration-none" href="underconstruction.html">
                     <img class="w-100" src="../images/GIGABYTE_A520I_AC.jpg" alt="Motherboard 9">
@@ -372,20 +335,11 @@
                 <div class="d-flex justify-content-center px-0 py-2">
                     <button class="btn btn-sm btn-primary me-1 border-0" type="button"
                         onclick="alert('Item added to cart')">+ Cart</button>
-                    <button class="btn btn-sm btn-danger ms-1 border-0" type="button" onclick="
-                            window.dataLayer = window.dataLayer || [];
-                            window.dataLayer.push({
-                                event: 'buyit',
-                                product: 'GIGABYTE A520I AC',
-                                price: 160.19
-                            });
-                            setTimeout(function() {
-                                window.location.href = './thankyou.html';
-                            }, 500);
-                        ">Buy It
-                    </button>
+                    <button class="btn btn-sm btn-danger ms-1 border-0" type="button"
+                        onclick="handleBuyIt('GIGABYTE A520I AC', 160.19)">Buy It</button>
                 </div>
             </div>
+            <!-- Product 10 -->
             <div class="col-6 col-sm-4 col-md-3 col-lg-2 gx-0 border hilite">
                 <a class="text-decoration-none" href="underconstruction.html">
                     <img class="w-100" src="../images/GIGABYTE_B650M_AORUS Elite_AMD_B650_Micro-ATX.jpg"
@@ -396,20 +350,11 @@
                 <div class="d-flex justify-content-center px-0 py-2">
                     <button class="btn btn-sm btn-primary me-1 border-0" type="button"
                         onclick="alert('Item added to cart')">+ Cart</button>
-                    <button class="btn btn-sm btn-danger ms-1 border-0" type="button" onclick="
-                            window.dataLayer = window.dataLayer || [];
-                            window.dataLayer.push({
-                                event: 'buyit',
-                                product: 'GIGABYTE B650M AORUS ELITE AX',
-                                price: 254.61
-                            });
-                            setTimeout(function() {
-                                window.location.href = './thankyou.html';
-                            }, 500);
-                        ">Buy It
-                    </button>
+                    <button class="btn btn-sm btn-danger ms-1 border-0" type="button"
+                        onclick="handleBuyIt('GIGABYTE B650M AORUS ELITE AX', 254.61)">Buy It</button>
                 </div>
             </div>
+            <!-- Product 11 -->
             <div class="col-6 col-sm-4 col-md-3 col-lg-2 gx-0 border hilite">
                 <a class="text-decoration-none" href="underconstruction.html">
                     <img class="w-100" src="../images/GIGABYTE_B550_Gaming_X_V2.jpg" alt="Motherboard 11">
@@ -419,20 +364,11 @@
                 <div class="d-flex justify-content-center px-0 py-2">
                     <button class="btn btn-sm btn-primary me-1 border-0" type="button"
                         onclick="alert('Item added to cart')">+ Cart</button>
-                    <button class="btn btn-sm btn-danger ms-1 border-0" type="button" onclick="
-                            window.dataLayer = window.dataLayer || [];
-                            window.dataLayer.push({
-                                event: 'buyit',
-                                product: 'GIGABYTE B550 Gaming X V2',
-                                price: 148.27
-                            });
-                            setTimeout(function() {
-                                window.location.href = './thankyou.html';
-                            }, 500);
-                        ">Buy It
-                    </button>
+                    <button class="btn btn-sm btn-danger ms-1 border-0" type="button"
+                        onclick="handleBuyIt('GIGABYTE B550 Gaming X V2', 148.27)">Buy It</button>
                 </div>
             </div>
+            <!-- Product 12 -->
             <div class="col-6 col-sm-4 col-md-3 col-lg-2 gx-0 border hilite">
                 <a class="text-decoration-none" href="underconstruction.html">
                     <img class="w-100" src="../images/GIGABYTE_B650_Eagle_AX.jpg" alt="Motherboard 12">
@@ -442,18 +378,8 @@
                 <div class="d-flex justify-content-center px-0 py-2">
                     <button class="btn btn-sm btn-primary me-1 border-0" type="button"
                         onclick="alert('Item added to cart')">+ Cart</button>
-                    <button class="btn btn-sm btn-danger ms-1 border-0" type="button" onclick="
-                            window.dataLayer = window.dataLayer || [];
-                            window.dataLayer.push({
-                                event: 'buyit',
-                                product: 'GIGABYTE B650 EAGLE AX',
-                                price: 229.62
-                            });
-                            setTimeout(function() {
-                                window.location.href = './thankyou.html';
-                            }, 500);
-                        ">Buy It
-                    </button>
+                    <button class="btn btn-sm btn-danger ms-1 border-0" type="button"
+                        onclick="handleBuyIt('GIGABYTE B650 EAGLE AX', 229.62)">Buy It</button>
                 </div>
             </div>
         </div>
