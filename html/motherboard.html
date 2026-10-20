@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -59,6 +58,31 @@
             }, 500);
         }
 
+        function showAutoDismissAlert(message) {
+            let container = document.getElementById('cart-toast-container');
+            if (!container) {
+                container = document.createElement('div');
+                container.id = 'cart-toast-container';
+                container.style.cssText = 'position: fixed; bottom: 20px; right: 20px; z-index: 1080;';
+                document.body.appendChild(container);
+            }
+
+            const alertBox = document.createElement('div');
+            alertBox.className = 'alert alert-success shadow-sm mb-2 py-2 px-3 fw-bold';
+            alertBox.style.cssText = 'transition: opacity 0.5s ease; opacity: 1; min-width: 220px;';
+            alertBox.innerHTML = '✓ ' + message;
+
+            container.appendChild(alertBox);
+
+            // Fade out and remove after 3 seconds
+            setTimeout(function () {
+                alertBox.style.opacity = '0';
+                setTimeout(function () {
+                    alertBox.remove();
+                }, 500);
+            }, 3000);
+        }
+
         function handleAddToCart(productName, productPrice) {
             var numericPrice = Number(productPrice);
 
@@ -81,12 +105,11 @@
                 }
             });
 
-            // 3. Display user feedback alert
-            alert('Item added to cart');
+            // 3. Display auto-dismissing notification
+            showAutoDismissAlert('Item added to cart');
         }
     </script>
 </head>
-
 <body>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M2NTCK39" height="0" width="0"
@@ -423,5 +446,4 @@
         </address>
     </footer>
 </body>
-
 </html>
