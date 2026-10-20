@@ -34,23 +34,30 @@
 
         function handleBuyIt(productName, productPrice) {
             var txnId = generateTransactionId();
+            var numericPrice = Number(productPrice);
 
             window.dataLayer = window.dataLayer || [];
+
+            // 1. Clear previous ecommerce object to prevent state pollution / value multiplication
+            window.dataLayer.push({ ecommerce: null });
+
+            // 2. Push standard GA4 purchase payload
             window.dataLayer.push({
                 event: 'purchase',
                 ecommerce: {
                     transaction_id: txnId,
-                    value: productPrice,
+                    value: numericPrice,
                     currency: 'SGD',
                     items: [{
                         item_id: 'SKU-' + productName.replace(/\s+/g, '').toLowerCase(),
                         item_name: productName,
-                        price: productPrice,
+                        price: numericPrice,
                         quantity: 1
                     }]
                 }
             });
 
+            // 3. Redirect after brief delay
             setTimeout(function () {
                 window.location.href = './thankyou.html';
             }, 500);
