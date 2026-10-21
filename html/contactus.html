@@ -9,6 +9,7 @@
     <title>Contact BUYME</title>
     <link rel="stylesheet" href="../bootstrap-5.3.2-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/override01.css">
+    <link rel="stylesheet" href="../css/ima.css">
     <!-- Google Tag Manager -->
     <script>
         (function (w, d, s, l, i) {
@@ -22,6 +23,40 @@
     <!-- End Google Tag Manager -->
     <script src="../bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
     <script src="../scripts/formsubmit.js"></script>
+
+    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+    <script>
+        window.googletag = window.googletag || { cmd: [] };
+        let slot300x600;
+
+        googletag.cmd.push(function () {
+
+            const adUnitPath250 = '/137679306/300x250';
+            const size250 = [300, 250];
+
+            googletag.defineSlot(adUnitPath250, size250, 'div-gpt-ad-slot-01')
+                .addService(googletag.pubads());
+
+            googletag.defineSlot(adUnitPath250, size250, 'div-gpt-ad-slot-02')
+                .addService(googletag.pubads());
+
+            googletag.defineSlot(adUnitPath250, size250, 'div-gpt-ad-slot-03')
+                .addService(googletag.pubads());
+
+            googletag.defineSlot(adUnitPath250, size250, 'div-gpt-ad-slot-04')
+                .addService(googletag.pubads());
+
+            googletag.defineSlot(adUnitPath250, size250, 'div-gpt-ad-slot-05')
+                .addService(googletag.pubads());
+
+            googletag.defineSlot(adUnitPath250, size250, 'div-gpt-ad-slot-06')
+                .addService(googletag.pubads());
+
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <script async src="https://imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
 </head>
 
 <body>
@@ -156,92 +191,114 @@
         </p>
     </div>
 
-    <div class="container-fluid d-flex gx-0">
-        <div class="col-3 pe-3 d-none d-lg-block">
-            <div class="card border-0 bg-transparent">
-                <img class="w-100 rounded-4" src="../images/ad3_300x250.gif" alt="Top Left Ad">
+    <div class="container-fluid d-flex justify-content-between gx-0">
+        <div class="col-lg-3 d-none d-lg-block">
+            <div class="display-ad-300x250 mb-4" id="div-gpt-ad-slot-01">
+                <script>
+                    googletag.cmd.push(function () {
+                        googletag.display("div-gpt-ad-slot-01");
+                    });
+                </script>
             </div>
-            <div class="card border-0 my-3 bg-transparent">
-                <img class="w-100 rounded-4" src="../images/ad6_300x250.jpeg" alt="Mid Left Ad">
+            <div class="display-ad-300x250 mb-4" id="div-gpt-ad-slot-02">
+                <script>
+                    googletag.cmd.push(function () {
+                        googletag.display("div-gpt-ad-slot-02");
+                    });
+                </script>
             </div>
-            <div class="card border-0 bg-transparent">
-                <img class="w-100 rounded-4" src="../images/ad1_300x250.png" alt="Bottom Left Ad">
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="container">
-                <form class="card bg-secondary border-0 rounded-4 px-3 pt-3" action="" target="_self" method="GET">
-                    <h4 class="bg-info rounded-3 p-2 mb-4 text-center text-white fw-bold">Customer Feedback Form</h4>
-                    <fieldset class="row gx-3 gy-3">
-                        <div class="col-md-6">
-                            <label class="form-label" for="surname">Family Name</label>
-                            <input class="form-control" type="text" name="surname" id="surname" placeholder="Mandatory"
-                                required>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label" for="givenname">Given Name</label>
-                            <input class="form-control" type="text" name="givenname" id="givenname"
-                                placeholder="Mandatory" required>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label" for="block">House/Block No.</label>
-                            <input class="form-control" type="text" name="block" id="block">
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label" for="unit">Apartment Unit No.</label>
-                            <input class="form-control" type="text" name="unit" id="unit">
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label" for="street">Street Name</label>
-                            <input class="form-control" type="text" name="street" id="street">
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label" for="state">State</label>
-                            <input class="form-control" type="text" name="state" id="state">
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label" for="country">Country</label>
-                            <input class="form-control" type="text" name="country" id="country">
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label" for="postalcode">Postal Code</label>
-                            <input class="form-control" type="text" name="postalcode" id="postalcode" maxlength="6"
-                                placeholder="Max. 6 digits" pattern="\d{6}">
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label" for="telephone">Telephone No.</label>
-                            <input class="form-control" type="tel" name="telephone" id="telephone" maxlength="12"
-                                placeholder="Max. 12 digits (no hyphen)" pattern="\d{,12}">
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label" for="email">E-mail</label>
-                            <input class="form-control" type="email" name="email" id="email" placeholder="Mandatory"
-                                required>
-                        </div>
-                        <div class="col-md-12">
-                            <label class="form-label" for="feedback">Support Request / Feedback</label>
-                            <textarea class="form-control feedback" name="feedback" id="feedback"
-                                placeholder="Mandatory" required></textarea>
-                        </div>
-                        <div class="btn-toolbar mb-3" style="gap: 15px;">
-                            <button class="btn btn-primary border-0" type="submit">Submit</button>
-                            <button class="btn btn-info border-0" type="reset">Reset</button>
-                        </div>
-                    </fieldset>
-                </form>
+            <div class="display-ad-300x250 mb-4" id="div-gpt-ad-slot-03">
+                <script>
+                    googletag.cmd.push(function () {
+                        googletag.display("div-gpt-ad-slot-03");
+                    });
+                </script>
             </div>
         </div>
 
-        <div class="col-3 ps-3 d-none d-lg-block">
-            <div class="card border-0 bg-transparent">
-                <img class="w-100 rounded-4" src="../images/ad4_300x250.gif" alt="Top Right Ad">
+        <div class="col-12 col-lg-6 px-lg-3">
+            <form class="card bg-secondary border-0 rounded-4 px-3 pt-3" action="" target="_self" method="GET">
+                <h4 class="bg-info rounded-3 p-2 mb-4 text-center text-white fw-bold">Customer Feedback Form</h4>
+                <fieldset class="row gx-3 gy-3">
+                    <div class="col-md-6">
+                        <label class="form-label" for="surname">Family Name</label>
+                        <input class="form-control" type="text" name="surname" id="surname" placeholder="Mandatory"
+                            required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="givenname">Given Name</label>
+                        <input class="form-control" type="text" name="givenname" id="givenname" placeholder="Mandatory"
+                            required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="block">House/Block No.</label>
+                        <input class="form-control" type="text" name="block" id="block">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="unit">Apartment Unit No.</label>
+                        <input class="form-control" type="text" name="unit" id="unit">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="street">Street Name</label>
+                        <input class="form-control" type="text" name="street" id="street">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="state">State</label>
+                        <input class="form-control" type="text" name="state" id="state">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="country">Country</label>
+                        <input class="form-control" type="text" name="country" id="country">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="postalcode">Postal Code</label>
+                        <input class="form-control" type="text" name="postalcode" id="postalcode" maxlength="6"
+                            placeholder="Max. 6 digits" pattern="\d{6}">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="telephone">Telephone No.</label>
+                        <input class="form-control" type="tel" name="telephone" id="telephone" maxlength="12"
+                            placeholder="Max. 12 digits (no hyphen)" pattern="\d{,12}">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="email">E-mail</label>
+                        <input class="form-control" type="email" name="email" id="email" placeholder="Mandatory"
+                            required>
+                    </div>
+                    <div class="col-md-12">
+                        <label class="form-label" for="feedback">Support Request / Feedback</label>
+                        <textarea class="form-control feedback" name="feedback" id="feedback" placeholder="Mandatory"
+                            required></textarea>
+                    </div>
+                    <div class="btn-toolbar mb-3" style="gap: 15px;">
+                        <button class="btn btn-primary border-0" type="submit">Submit</button>
+                        <button class="btn btn-info border-0" type="reset">Reset</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="col-lg-3 d-none d-lg-block">
+            <div class="display-ad-300x250 mb-4" id="div-gpt-ad-slot-04">
+                <script>
+                    googletag.cmd.push(function () {
+                        googletag.display("div-gpt-ad-slot-04");
+                    });
+                </script>
             </div>
-            <div class="card border-0 my-3 bg-transparent">
-                <img class="w-100 rounded-4" src="../images/ad7_300x250.png" alt="Mid Right Ad">
+            <div class="display-ad-300x250 mb-4" id="div-gpt-ad-slot-05">
+                <script>
+                    googletag.cmd.push(function () {
+                        googletag.display("div-gpt-ad-slot-05");
+                    });
+                </script>
             </div>
-            <div class="card border-0 bg-transparent">
-                <img class="w-100 rounded-4" src="../images/ad2_300x250.png" alt="Bottom Right Ad">
+            <div class="display-ad-300x250 mb-4" id="div-gpt-ad-slot-06">
+                <script>
+                    googletag.cmd.push(function () {
+                        googletag.display("div-gpt-ad-slot-06");
+                    });
+                </script>
             </div>
         </div>
     </div>
