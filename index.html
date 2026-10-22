@@ -22,6 +22,24 @@
     <!-- End Google Tag Manager -->
 
     <script src="./bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
+
+    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+    <script>
+        window.googletag = window.googletag || { cmd: [] };
+
+        googletag.cmd.push(function () {
+
+            const adUnitPath970x250 = '/137679306/970x250';
+            const size970x250 = [970, 250];
+
+            googletag.defineSlot(adUnitPath970x250, size970x250, 'div-gpt-ad-slot-01')
+                .addService(googletag.pubads());
+
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <script async src="https://imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
 </head>
 
 <body>
@@ -70,15 +88,15 @@
             </div>
         </nav>
     </header>
-    <div class="container-fluid gx-0 mt-3 w-75">
-        <a href="https://www.tp-link.com/sg" target="_blank">
-            <img class="w-100" src="images/ad1_1280x220.jpeg" alt="Ads">
-        </a>
-    </div>
-    <div class="container-fluid gx-0 mt-3 w-75">
-        <a href="https://www.kioxia.com/en-jp" target="_blank">
-            <img class="w-100" src="images/ad2_1280x220.jpeg" alt="Ads">
-        </a>
+    <div class="container-fluid gx-0 mt-3 w-75 mx-auto">
+        <!-- First Ad -->
+        <div class="display-ad-970x250 text-center" id="div-gpt-ad-slot-01">
+            <script>
+                googletag.cmd.push(function () {
+                    googletag.display("div-gpt-ad-slot-01");
+                });
+            </script>
+        </div>
     </div>
     <div class="container-fluid">
         <div class="row">
