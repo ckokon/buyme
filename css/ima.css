@@ -32,24 +32,22 @@
 	height: 100%;
 }
 
-/* --- 300x250 Ad Styles (Side Ads) --- */
+/* --- 300x250 Ad Styles --- */
 .display-ad-300x250 {
-	/*
-	border: 1px solid #ccc;
-	padding: 5px;
-	*/
-	text-align: center;
+	/* border: 1px solid #ccc; */
 	min-width: 300px;
 	min-height: 250px;
+	display: flex;
+	justify-content: center;
 }
 
-/* --- 300x600 Ad Style (Slot 02) --- */
-.display-ad-300x600 {
-	border: 1px solid #ccc;
-	padding: 5px;
-	text-align: center;
-	min-width: 300px;
-	min-height: 600px;
+/* --- 970x250 Ad Style --- */
+.display-ad-970x250 {
+	/* border: 1px solid #ccc; */
+	min-width: 970px;
+	min-height: 250px;
+	display: flex;
+	justify-content: center;
 }
 
 .info-text-block {
