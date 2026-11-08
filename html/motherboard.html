@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -109,7 +110,34 @@
             showAutoDismissAlert('Item added to cart');
         }
     </script>
+    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+    <script>
+        window.googletag = window.googletag || { cmd: [] };
+
+        googletag.cmd.push(function () {
+
+            const adUnitPath250 = '/137679306/300x250';
+            const size250 = [300, 250];
+
+            googletag.defineSlot(adUnitPath250, size250, 'div-gpt-ad-slot-01')
+                .addService(googletag.pubads());
+
+            googletag.defineSlot(adUnitPath250, size250, 'div-gpt-ad-slot-02')
+                .addService(googletag.pubads());
+
+            googletag.defineSlot(adUnitPath250, size250, 'div-gpt-ad-slot-03')
+                .addService(googletag.pubads());
+
+            googletag.defineSlot(adUnitPath250, size250, 'div-gpt-ad-slot-04')
+                .addService(googletag.pubads());
+
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <script async src="https://imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
 </head>
+
 <body>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M2NTCK39" height="0" width="0"
@@ -232,42 +260,51 @@
             </div>
         </nav>
     </header>
-    <div class="container-fluid d-flex">
+
+    <div class="container-fluid my-3">
         <div class="row">
-            <div class="col-xs-12 col-md-6 col-lg-3 px-2 gx-0 gy-3">
-                <div class="card rounded-0 bg-transparent">
-                    <a href="https://www.hsbc.com.sg/credit-cards" target="_blank">
-                        <img class="w-100" src="../images/hsbc.jpeg" alt="HSBC Promotion">
-                    </a>
+            <div class="col-12 col-md-3">
+                <div class="display-ad-300x250 text-center mx-auto" id="div-gpt-ad-slot-01">
+                    <script>
+                        googletag.cmd.push(function () {
+                            googletag.display("div-gpt-ad-slot-01");
+                        });
+                    </script>
                 </div>
             </div>
-            <div class="col-xs-12 col-md-6 col-lg-3 px-2 gx-0 gy-3">
-                <div class="card rounded-0 bg-transparent">
-                    <a href="https://www.citibank.com.sg/credit-cards/?lid=SGENCBGCCMITLAllCreditCard" target="_blank">
-                        <img class="w-100" src="../images/citibank.jpeg" alt="Citibank Promotion">
-                    </a>
+            <div class="col-12 col-md-3">
+                <div class="display-ad-300x250 text-center mx-auto" id="div-gpt-ad-slot-02">
+                    <script>
+                        googletag.cmd.push(function () {
+                            googletag.display("div-gpt-ad-slot-02");
+                        });
+                    </script>
                 </div>
             </div>
-            <div class="col-xs-12 col-md-6 col-lg-3 px-2 gx-0 gy-3">
-                <div class="card rounded-0 bg-transparent">
-                    <a href="https://www.dbs.com.sg/treasures/banking/accounts-cards/cards/default.page"
-                        target="_blank">
-                        <img class="w-100" src="../images/dbs.jpeg" alt="DBS Promotion">
-                    </a>
+            <div class="col-12 col-md-3">
+                <div class="display-ad-300x250 text-center mx-auto" id="div-gpt-ad-slot-03">
+                    <script>
+                        googletag.cmd.push(function () {
+                            googletag.display("div-gpt-ad-slot-03");
+                        });
+                    </script>
                 </div>
             </div>
-            <div class="col-xs-12 col-md-6 col-lg-3 px-2 gx-0 gy-3">
-                <div class="card rounded-0 bg-transparent">
-                    <a href="https://cards.dcscc.com" target="_blank">
-                        <img class="w-100" src="../images/dcs.jpeg" alt="DCS Promotion">
-                    </a>
+            <div class="col-12 col-md-3">
+                <div class="display-ad-300x250 text-center mx-auto" id="div-gpt-ad-slot-04">
+                    <script>
+                        googletag.cmd.push(function () {
+                            googletag.display("div-gpt-ad-slot-04");
+                        });
+                    </script>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="container-fluid">
         <div class="row">
-            <p class="py-2 mb-3 mt-3 bg-primary text-center text-uppercase text-white fs-5 fw-bold">
+            <p class="py-2 mb-3 bg-primary text-center text-uppercase text-white fs-5 fw-bold">
                 Intel-Based Motherboards - click Image to See Specifications
             </p>
         </div>
@@ -424,7 +461,7 @@
                     <button class="btn btn-sm btn-primary me-1 border-0" type="button"
                         onclick="handleAddToCart('GIGABYTE B550 Gaming X V2', 148.27)">+ Cart</button>
                     <button class="btn btn-sm btn-danger ms-1 border-0" type="button"
-                        onclick="handleBuyIt('GIGABYTE B550 Gaming X V2', 148.27)">Buy It</button>
+                        onclick="handleBuyIt('GIGABYTE B550 Gaming XV2', 148.27)">Buy It</button>
                 </div>
             </div>
             <!-- Product 12 -->
@@ -455,4 +492,5 @@
         </address>
     </footer>
 </body>
+
 </html>
